@@ -8,19 +8,19 @@
 owo_result=$@
 
 # Replaces na, ne, ni, no and nu by nya, nye, nyi, nyo and nyu
-owo_result=$(echo $owo_result | sed 's/na/nya/;s/ne/nye/;s/ni/nyi/;s/no/nyo/;s/nu/nyu/')
-owo_result=$(echo $owo_result | sed 's/NA/NYA/;s/NE/NYE/;s/NI/NYI/;s/NO/NYO/;s/NU/NYU/')
-owo_result=$(echo $owo_result | sed 's/Na/Nya/;s/Ne/Nye/;s/Ni/Nyi/;s/No/Nyo/;s/Nu/Nyu/')
+owo_result=$(echo $owo_result | sed 's/na/nya/g;s/ne/nye/g;s/ni/nyi/g;s/no/nyo/g;s/nu/nyu/g')
+owo_result=$(echo $owo_result | sed 's/NA/NYA/g;s/NE/NYE/g;s/NI/NYI/g;s/NO/NYO/g;s/NU/NYU/g')
+owo_result=$(echo $owo_result | sed 's/Na/Nya/g;s/Ne/Nye/g;s/Ni/Nyi/g;s/No/Nyo/g;s/Nu/Nyu/g')
 
 # Replaces l and r by w
-owo_result=$(echo $owo_result | sed 's/r/w/;s/l/w/')
-owo_result=$(echo $owo_result | sed 's/R/W/;s/L/W/')
+owo_result=$(echo $owo_result | sed 's/r/w/g;s/l/w/g')
+owo_result=$(echo $owo_result | sed 's/R/W/g;s/L/W/g')
 
 # Replaces ove by uv
-owo_result=$(echo $owo_result | sed 's/ove/uv/')
+owo_result=$(echo $owo_result | sed 's/ove/uv/g')
 
 # Replaces ! by a random owo (need random-owo.sh in PATH env)
-[[ $(which random-owo.sh) ]] && owo_result=$(echo $owo_result | sed "s/\!\+/$(random-owo.sh)/")
+[[ $(which random-owo.sh) ]] && owo_result=$(echo $owo_result | sed "s/\!\+/$(random-owo.sh)/g")
 
 
 echo $owo_result
